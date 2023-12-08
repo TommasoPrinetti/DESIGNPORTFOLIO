@@ -318,32 +318,38 @@ section {
             padding-bottom: var(--spacing-l);
 
             grid-template-columns: repeat(6, 1fr);
-            
+        
         }
 
         .gallery_container > .description {
-            grid-column: span 3;
+            grid-column: span 4;
             width: 100%;
             display: flex;
             flex-direction: column;
             row-gap: var(--spacing-xs);
         }
 
+        .gallery_container > .description >p2 {
+            width: 70%;
+        }
+
             .gallery {
                 grid-column: span 6;
                 display: flex;
                 flex-wrap: wrap;
-                column-gap: var(--spacing-l);
-                row-gap: var(--spacing-l);
+                column-gap: var(--spacing-m);
+                row-gap: var(--spacing-m);
                 
                 align-items: center;
                 justify-content: center;
+
             }
 
             .gallery > .full_width {
                 width: 100%;
                 height: auto;
                 object-fit: cover;
+                align-items: center;
             }
 
             .gallery > .half_width {
@@ -352,15 +358,16 @@ section {
                 object-fit: cover;
             }
 
-            .gallery > div {
-                width: 45%;
-                height: 100%;
+            .gallery > iframe {
+                width: 100%;
+                height: auto;
 
                 display: flex;
                 flex-direction: column;
 
                 row-gap: var(--spacing-xs);
             }
+
 
             .gallery > div > p1 {
                 width: 80%;
@@ -411,7 +418,6 @@ section {
         }
 
             .project_page > .anchors {
-                background-color: #FF5129;
                 align-items:flex-start;
             }
 
@@ -425,10 +431,7 @@ section {
             }
 
         .gallery_container {
-            padding-top: var(--spacing-l);
-            padding-right: var(--spacing-m);
-            padding-left: var(--spacing-m);
-            padding-bottom: var(--spacing-l);
+            padding: var(--spacing-m);
 
             grid-template-columns: repeat(2, 1fr);
             
