@@ -153,6 +153,7 @@ section {
 
 
     .hero {
+        z-index: -200;
         height: 100vh;
         color: white;
 
@@ -796,10 +797,10 @@ header {
 
     color: white;
     
-    position: fixed;
+    position: none;
     top: 0px;
 
-    z-index: -100;
+    z-index: 0;
 }
 
     .project_page > header > nav > a > svg g path {
