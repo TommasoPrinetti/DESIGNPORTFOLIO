@@ -1,0 +1,25 @@
+:root {
+    --brand_orange: #FF5129;
+    --brand_black: #000000;
+    --brand_white: #FFFFFF;
+}
+
+
+#transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr); 
+    visibility: hidden;
+    z-index: 9999; 
+}
+
+.square {
+    background-color: var(--brand_orange);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}

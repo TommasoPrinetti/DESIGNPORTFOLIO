@@ -47,3 +47,52 @@ document.addEventListener('DOMContentLoaded', function() {
         heroSection.classList.remove('cursor-none'); // Remove the class to show the cursor again
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const overlay = document.getElementById('transition-overlay');
+    const squares = [];
+
+    // Create squares
+    for (let i = 0; i < 400; i++) {
+        const square = document.createElement('div');
+        square.classList.add('square');
+        overlay.appendChild(square);
+        squares.push(square);
+    }
+
+    // Function to start the transition
+    function startTransition(url) {
+        overlay.style.visibility = 'visible';
+
+        // Randomize the order of squares and make them appear
+        const shuffledSquares = squares.sort(() => 0.5 - Math.random());
+        shuffledSquares.forEach((square, index) => {
+            setTimeout(() => {
+                square.style.opacity = 1;
+            }, index * 2); // Time delay for each square
+        });
+
+        // After all squares are visible, navigate to the new page
+        setTimeout(() => {
+            window.location.href = url;
+        }, shuffledSquares.length * 5);
+    }
+
+    // Attach transition to links
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            startTransition(link.href);
+        });
+    });
+
+    // Make squares disappear in reverse order when the new page loads
+    squares.reverse().forEach((square, index) => {
+        setTimeout(() => {
+            square.style.opacity = 0;
+        }, index * 5); // Adjust timing as needed
+    });
+});
+
+
