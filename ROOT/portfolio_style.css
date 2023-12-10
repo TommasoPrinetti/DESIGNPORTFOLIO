@@ -1028,7 +1028,6 @@ header {
     header > nav > a > svg g path {
         height: auto;
         grid-column: span 1;
-        mix-blend-mode: exclusion;
         fill: white;
 
     }
