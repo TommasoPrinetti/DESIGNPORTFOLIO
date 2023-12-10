@@ -1,3 +1,31 @@
+document.addEventListener("DOMContentLoaded", function() {
+    var loadPercent = 0;
+    var isPageLoaded = false;
+    var interval = setInterval(function() {
+        if (loadPercent < 99) {
+            loadPercent++;
+            document.querySelector('.loading h').textContent = loadPercent + '%';
+        }
+    }, 20); // Adjust the time here to control the speed of the loading percentage increase
+
+    window.onload = function() {
+        isPageLoaded = true;
+        setTimeout(hideLoadingScreen, 2000); // Ensure loading screen displays for at least 2 seconds
+    }
+
+    function hideLoadingScreen() {
+        if(isPageLoaded) {
+            clearInterval(interval);
+            var loadingScreen = document.querySelector('.loading');
+            loadingScreen.classList.add('fade-out');
+            setTimeout(function() {
+                loadingScreen.style.display = 'none';
+            }, 1000); // This should match the duration of the fade-out animation
+        }
+    }
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const heroSection = document.querySelector('.hero');
     const revealImage = heroSection.querySelector('.reveal-image');
@@ -94,32 +122,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }, index * 5); // Adjust timing as needed
     });
 });
-
-document.addEventListener("DOMContentLoaded", function() {
-    var loadPercent = 0;
-    var isPageLoaded = false;
-    var interval = setInterval(function() {
-        if (loadPercent < 99) {
-            loadPercent++;
-            document.querySelector('.loading h').textContent = loadPercent + '%';
-        }
-    }, 20); // Adjust this to ensure it reaches 99% around 2 seconds
-
-    window.onload = function() {
-        isPageLoaded = true;
-        hideLoadingScreen();
-    }
-
-    setTimeout(function() {
-        if (isPageLoaded) {
-            hideLoadingScreen();
-        }
-    }, 2000); // Check after 2 seconds
-
-    function hideLoadingScreen() {
-        clearInterval(interval);
-        document.querySelector('.loading').style.display = 'none';
-    }
-});
-
-
