@@ -122,3 +122,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }, index * 5); // Adjust timing as needed
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const spanElement = document.querySelector('.project_page .hero span');
+    spanElement.classList.add('animate-font');
+});

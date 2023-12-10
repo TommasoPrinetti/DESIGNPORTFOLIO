@@ -43,6 +43,110 @@
         font-style: italic;
     }
 
+/* REDACTION 50 */
+
+    /* Regular */
+    @font-face {
+        font-family: 'Redaction 50';
+        src: url('FONT/Redaction50-Regular.otf') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    /* Bold */
+    @font-face {
+        font-family: 'Redaction 50';
+        src: url('FONT/Redaction50-Bold.otf') format('opentype');
+        font-weight: 700;
+        font-style: bold;
+    }
+
+    /* Italic */
+    @font-face {
+        font-family: 'Redaction 50';
+        src: url('FONT/Redaction50-Italic.otf') format('opentype');
+        font-weight: 400;
+        font-style: italic;
+    }
+
+/* REDACTION 70 */
+
+    /* Regular */
+    @font-face {
+        font-family: 'Redaction 70';
+        src: url('FONT/Redaction70-Regular.otf') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    /* Bold */
+    @font-face {
+        font-family: 'Redaction 70';
+        src: url('FONT/Redaction70-Bold.otf') format('opentype');
+        font-weight: 700;
+        font-style: bold;
+    }
+
+    /* Italic */
+    @font-face {
+        font-family: 'Redaction 70';
+        src: url('FONT/Redaction70-Italic.otf') format('opentype');
+        font-weight: 400;
+        font-style: italic;
+    }
+
+/* REDACTION 70 */
+
+    /* Regular */
+    @font-face {
+        font-family: 'Redaction 20';
+        src: url('FONT/Redaction20-Regular.otf') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    /* Bold */
+    @font-face {
+        font-family: 'Redaction 20';
+        src: url('FONT/Redaction20-Bold.otf') format('opentype');
+        font-weight: 700;
+        font-style: bold;
+    }
+
+    /* Italic */
+    @font-face {
+        font-family: 'Redaction 20';
+        src: url('FONT/Redaction20-Italic.otf') format('opentype');
+        font-weight: 400;
+        font-style: italic;
+    }
+
+/* REDACTION 100 */
+
+    /* Regular */
+    @font-face {
+        font-family: 'Redaction 100';
+        src: url('FONT/Redaction100-Regular.otf') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    /* Bold */
+    @font-face {
+        font-family: 'Redaction 100';
+        src: url('FONT/Redaction100-Bold.otf') format('opentype');
+        font-weight: 700;
+        font-style: bold;
+    }
+
+    /* Italic */
+    @font-face {
+        font-family: 'Redaction 100';
+        src: url('FONT/Redaction100-Italic.otf') format('opentype');
+        font-weight: 400;
+        font-style: italic;
+    }
+
 /* NEUE MONTREAL */
 
 
@@ -1242,4 +1346,37 @@ p3 {
            
            padding-top: var(--spacing-m);
        }
+}
+
+    .animate-font {
+        animation: fontCycle 15s infinite;
+        animation-timing-function: steps(5, end);
+    }
+  
+  @keyframes fontCycle {
+    0%, 100% { font-family: 'Redaction 35'; }
+    40% { font-family: 'Redaction 50'; }
+    70% { font-family: 'Redaction 70'; }
+    80% { font-family: 'Redaction 100'; }
+  }
+
+/* SCROLLBUTTON */
+
+.scrolldown {
+    position: absolute;
+    bottom: 100px;
+    right: 50%;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media screen and (max-width: 480px) {
+
+    .scrolldown {
+        position: absolute;
+        bottom: 100px;
+        right: 0%;
+        width: 100%;
+        text-align: center;
+    }
+
 }
