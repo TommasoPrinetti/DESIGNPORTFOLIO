@@ -3,12 +3,12 @@ import subprocess
 from PIL import Image
 from tqdm import tqdm
 
-def compress_image(image_path, quality=75):
+def compress_image(image_path, quality=90):
     original_size = os.path.getsize(image_path)
     with Image.open(image_path) as img:
         if img.format == 'PNG':
             # Use pngquant for PNG files
-            subprocess.run(['pngquant', '--force', '--output', image_path, '--quality', f'{quality}-100', image_path])
+            subprocess.run(['pngquant', '--force', '--output', image_path, '--quality', f'{quality}-90', image_path])
         elif img.format == 'JPEG':
             img.save(image_path, quality=quality, optimize=True)
         else:
@@ -33,6 +33,6 @@ def process_directory(directory):
     return total_saved
 
 if __name__ == '__main__':
-    directory = '/Users/tommasoprinetti/Library/CloudStorage/OneDrive-PolitecnicodiMilano/Desktop/PORTFOLIOS/CODING_WEBPORTFOLIO/ROOT/IMAGES'  # Change this to your directory
+    directory = '/Users/tommasoprinetti/Library/CloudStorage/OneDrive-PolitecnicodiMilano/Desktop/PORTFOLIO_SPLIT'  # Change this to your directory
     total_saved = process_directory(directory)
     print(f"Total space saved: {total_saved / (1024 * 1024):.2f} MB")

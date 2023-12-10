@@ -432,6 +432,12 @@ section {
                 object-fit: cover;
             }
 
+            .gallery > .third_width {
+                width: 30%;
+                height: auto;
+                object-fit: cover;
+            }
+
             
 
 
@@ -545,6 +551,12 @@ section {
             }
 
             .gallery > .half_width {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+
+            .gallery > .third_width {
                 width: 100%;
                 height: auto;
                 object-fit: cover;
@@ -1088,7 +1100,7 @@ p3 {
     }
     
     h2 {
-        font-size: 28px;
+        font-size: 32px;
     }
     
     h3 {
@@ -1104,7 +1116,7 @@ p3 {
     }
 
     p1 {
-        font-size: 18px; 
+        font-size: 16px; 
     }
     
     p2 {
@@ -1115,4 +1127,70 @@ p3 {
         font-size: 8px;
     }
 
+}
+
+/* LOADING ANINATION */
+
+.loading {
+ position: fixed;
+ display: flex;
+ width: 100vw;
+ height: 100vh;
+ background-color: #FF5129;
+ z-index: 100;
+ padding-left: var(--spacing-l);
+ padding-right: var(--spacing-l);
+}
+
+.loading > h{
+    color: #FFF;
+    grid-column: span 2;
+    font-family: 'Redaction 35';
+    font-size: 212px;
+    font-style: normal;
+    font-weight: 400;
+    position: relative;
+    height: fit-content;
+    justify-content: end;
+    align-self:flex-end;
+
+    margin: 0px;
+    padding-bottom: var(--spacing-m);
+}
+
+.loading > p {
+    color: #FFF;
+    text-align: right;
+    font-family: 'Redaction 35';
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    justify-content: start;
+    align-self: flex-start;
+    width: 100%;
+    margin: 0px;
+    padding-top: var(--spacing-m);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media screen and (max-width: 480px) {
+    .loading {
+        padding-left: var(--spacing-m);
+        padding-right: var(--spacing-m);
+       }
+       
+       .loading > h{
+
+           font-size: 78px;
+           margin: 0px;
+           padding-bottom: var(--spacing-m);
+       }
+       
+       .loading > p {
+           
+           font-size: 22px;
+           width: 100%;
+           
+           padding-top: var(--spacing-m);
+       }
 }

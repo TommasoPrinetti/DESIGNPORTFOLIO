@@ -95,4 +95,31 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    var loadPercent = 0;
+    var isPageLoaded = false;
+    var interval = setInterval(function() {
+        if (loadPercent < 99) {
+            loadPercent++;
+            document.querySelector('.loading h').textContent = loadPercent + '%';
+        }
+    }, 20); // Adjust this to ensure it reaches 99% around 2 seconds
+
+    window.onload = function() {
+        isPageLoaded = true;
+        hideLoadingScreen();
+    }
+
+    setTimeout(function() {
+        if (isPageLoaded) {
+            hideLoadingScreen();
+        }
+    }, 2000); // Check after 2 seconds
+
+    function hideLoadingScreen() {
+        clearInterval(interval);
+        document.querySelector('.loading').style.display = 'none';
+    }
+});
+
 
