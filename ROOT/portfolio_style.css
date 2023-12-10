@@ -1355,9 +1355,9 @@ p3 {
   
   @keyframes fontCycle {
     0%, 100% { font-family: 'Redaction 35'; }
-    40% { font-family: 'Redaction 50'; }
-    70% { font-family: 'Redaction 70'; }
-    80% { font-family: 'Redaction 100'; }
+        40% { font-family: 'Redaction 50'; }
+        70% { font-family: 'Redaction 70'; }
+        80% { font-family: 'Redaction 100'; }
   }
 
 /* SCROLLBUTTON */
@@ -1373,7 +1373,7 @@ p3 {
 
     .scrolldown {
         position: absolute;
-        bottom: 100px;
+        bottom: 200px;
         right: 0%;
         width: 100%;
         text-align: center;
