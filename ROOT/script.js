@@ -1,29 +1,36 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var loadPercent = 0;
-    var isPageLoaded = false;
-    var interval = setInterval(function() {
-        if (loadPercent < 99) {
-            loadPercent++;
-            document.querySelector('.loading h').textContent = loadPercent + '%';
-        }
-    }, 20); // Adjust the time here to control the speed of the loading percentage increase
+    if (!sessionStorage.getItem('loadedOnce')) {
+        var loadPercent = 0;
+        var isPageLoaded = false;
+        var interval = setInterval(function() {
+            if (loadPercent < 99) {
+                loadPercent++;
+                document.querySelector('.loading h').textContent = loadPercent + '%';
+            }
+        }, 20);
 
-    window.onload = function() {
-        isPageLoaded = true;
-        setTimeout(hideLoadingScreen, 2000); // Ensure loading screen displays for at least 2 seconds
-    }
-
-    function hideLoadingScreen() {
-        if(isPageLoaded) {
-            clearInterval(interval);
-            var loadingScreen = document.querySelector('.loading');
-            loadingScreen.classList.add('fade-out');
-            setTimeout(function() {
-                loadingScreen.style.display = 'none';
-            }, 1000); // This should match the duration of the fade-out animation
+        window.onload = function() {
+            isPageLoaded = true;
+            setTimeout(hideLoadingScreen, 2000);
         }
+
+        function hideLoadingScreen() {
+            if(isPageLoaded) {
+                clearInterval(interval);
+                var loadingScreen = document.querySelector('.loading');
+                loadingScreen.classList.add('fade-out');
+                setTimeout(function() {
+                    loadingScreen.style.display = 'none';
+                    sessionStorage.setItem('loadedOnce', true);
+                }, 1000);
+            }
+        }
+    } else {
+        var loadingScreen = document.querySelector('.loading');
+        loadingScreen.style.display = 'none';
     }
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
